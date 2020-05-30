@@ -26,7 +26,6 @@ func SaveMood(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("error parsing mood data", err)
 		w.WriteHeader(http.StatusBadRequest)
-		// fmt.Fprint(w, "error parsing mood data")
 		return
 	}
 

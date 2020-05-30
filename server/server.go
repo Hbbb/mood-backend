@@ -36,7 +36,6 @@ func SaveMood(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("error establishing DB connection", err)
 		w.WriteHeader(http.StatusInternalServerError)
-		// fmt.Fprint(w, "error establishing connection to database")
 		return
 	}
 
@@ -44,7 +43,6 @@ func SaveMood(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("error pinging DB connection", err)
 		w.WriteHeader(http.StatusInternalServerError)
-		// fmt.Fprint(w, "error pinging database")
 		return
 	}
 
@@ -54,11 +52,9 @@ func SaveMood(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Println("error creating mood report", err)
 		w.WriteHeader(http.StatusBadRequest)
-		// fmt.Fprint(w, "error creating new mood")
 		return
 	}
 
 	log.Println("success! created mood report")
 	w.WriteHeader(201)
-	// fmt.Fprint(w, "success")
 }
